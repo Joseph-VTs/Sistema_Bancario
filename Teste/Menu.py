@@ -1,53 +1,77 @@
-# print("Aqui será a Tela do Terminal")
+# Importar Outros Arquivos
+import Validacoes
+import Cores
+
+
+Nick = "Joseph"
 
 def Menu_Terminal():
     while True:
-        print("-" * 41)
-        print("Menu do Terminal: \"Senta, Senta que é Banco\"...")
-        print("-" * 41)
-        print()
-        print("Opções:")
-        print("[1] - Extrato Carão Crédito")
-        print("[2] - Extrato Cartão Débito")
-        print("[3] - Sacar sem Cartão")
-        print("[4] - Sacar com Cartão")
-        print("[5] - Depositar na Conta")
-        print("[6] - Transferência Entre Contas")
-        print("[7] - Recarga de Celular")
-        print("[0] - Encerrar Sessão...")
-        print("-" * 41)
+        # Menu de Opções
+        print("=" * 40)
+        Cores.Print_Color(
+            Cores.Blue + "🏧 Banco Sentar.",
+            Cores.Reset + " Seja Bem-Vindo ",
+            Cores.Green + f"{Nick}..."
+        )
         
-        Option_Terminal = int(input("Escolha uma Opção: "))
-        
-        if Option_Terminal == 0:
-            print("🔒 Encerrando Sessão...")
-            break
-        elif Option_Terminal == 1:
-            print("Menu: 📄 Extrato do Cartão de Crédito:")
-            print("-" * 40)            
-        elif Option_Terminal == 2:
-            print("Menu: 📄 Extrato do Cartão de Débito:")
-            print("-" * 40)
-        elif Option_Terminal == 3:
-            print("Menu: 💸 Sacar sem Cartão:")
-            print("-" * 40)
-        elif Option_Terminal == 4:
-            print("Menu: 💳 Sacar com Cartão:")
-            print("-" * 40)
-        elif Option_Terminal == 5:
-            print("Menu: 📥 Depositar na Conta:")
-            print("-" * 40)
+        print("-" * 40)
+        Cores.Print_Color(
+            Cores.Blue + "[1]", Cores.Reset + " - 📄 Extratos",
+            Cores.Blue + "\n[2]", Cores.Reset + " - 📤 Saque",
+            Cores.Blue + "\n[3]", Cores.Reset + " - 📥 Depósito",
+            Cores.Blue + "\n[4]", Cores.Reset + " - 🔁 Tranferência",
+            Cores.Blue + "\n[0]", Cores.Reset + " - 🔒 Encerrar Sessão...",
+        )
+        print("=" * 40)
             
-            import Depositar
-            Depositar.Executar()
-        elif Option_Terminal == 6:
-            print("Menu: 🔁 Transferência Entre Contas")
-            print("-" * 40)
-        elif Option_Terminal == 7:
-            print("Menu: 📱 Recarga de Celular")
-            print("-" * 40)
-        else:
-            print("❌ Opção inválida. Tente novamente...")
+        # Entrada Menu
+        # Options_Menu = Validacoes.Valida_Terminal(input("💢 Menu Digite uma Opção: "), [0, 1, 2, 3, 4])
+        # if Options_Menu is None:
+        #    continue
+        
+        Cores.Print_Color(Cores.Blue + "💢 Menu Digite uma Opção:", Cores.Reset, end=" ")
+        Options_Menu = Validacoes.Valida_Terminal(input(), [0, 1, 2, 3, 4])
 
-# Executar o Menu do Terminal
+                      
+        if Options_Menu == 0:
+            print("💤 Encerrando Sessão...")
+            break
+        elif Options_Menu == 1: # + Sub Menu
+            while True:
+                print("=" * 40)
+                print("📄 Extratos")
+                print("-" * 40)
+                print("[1] - 📄 Cartão de Crédito")
+                print("[2] - 📄 Cartão de Débito")
+                print("[0] - ↩ Voltar...")
+                print("=" * 40)
+                
+
+                # Entrada Sub Menu
+                Entrada = input("💢 SubMenu Digite uma Opção: ").strip()
+                if not Validacoes.Valida_Terminal(Entrada, [0, 1, 2]):
+                    continue
+                Options_Menu = int(Entrada)
+                
+                
+                if Options_Menu == 0:
+                    # Volta para Options_Menu
+                    print(" ⬅  Voltando...")
+                    break
+                elif Options_Menu == 1:
+                    print("💾.py -> Detalhes do Extato")
+                elif Options_Menu == 2:
+                    print("💾.py -> Detalhes do Extato")        
+        elif Options_Menu == 2:
+            print("💾.py -> Sacar Valor....")
+        elif Options_Menu == 3:
+            print("💾.py -> Depósito \n")
+            import Depositar # Outro Arquivo
+            Depositar.Executar()
+
+        elif Options_Menu == 4:
+            print("💾.py -> Tranferências.....")
+            continue
+            
 Menu_Terminal()
