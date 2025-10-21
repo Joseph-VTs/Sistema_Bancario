@@ -1,8 +1,7 @@
 # 💾 Arquivos Importados
-
 # Cores -> Nova Descoberta 😀
 
-Black = '\033[1;30m'
+Black = '\033[3;30m'
 Red = '\033[1;31m'
 Green = '\033[1;32m'
 Yellow = '\033[1;33m'
