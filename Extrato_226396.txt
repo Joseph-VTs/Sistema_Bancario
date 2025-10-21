@@ -1,0 +1,13 @@
+🏦 Banco Sentar - Extrato Detalhado
+Titular: Jose Vini
+Número da Conta: 226396
+Data da Consulta: 20/10/2025 21:39
+--------------------------------------------------
+[1] ➤ 💵 Depósito no Caixa Eletrônico: R$ 3570.00
+[2] ➤ 🏢 [20/10/2025 21:31] Depósito via Agência: R$ 174.51
+[3] ➤ 🔁 [20/10/2025 21:33] Transferência Enviada para Maria Zé | R$ 20.00
+[4] ➤ 🏢 [20/10/2025 21:37] Depósito via Agência: R$ 50.00
+[5] ➤ 💸 Saque no Caixa Eletrônico: R$ 550.00
+--------------------------------------------------
+Saldo Atual: R$ 3224.51
+==================================================

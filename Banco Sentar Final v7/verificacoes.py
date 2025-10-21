@@ -85,7 +85,7 @@ def Ver_Idade():
         if Convert < 18:
             # Usa Cores.Yellow_Ligth e Cores.Reset
             print(f"{Cores.Yellow_Ligth}❗ Menor de Idade...{Cores.Reset}")
-            print("Lamentamos, porém menores de Idade não Podem ter fazer seu Cadastro. Volte quando Você quanto tiver seus 18 anos ou mais")
+            print("Lamentamos, porém menores de Idade não Podem fazer seu Cadastro. Volte quando tiver seus 18 anos ou mais")
             return None
             
         if Convert > 120:
